@@ -29,7 +29,7 @@ After this, your setup should be good to go. Each hands-on will have instruction
 
 ## VS Code and Pyenv in Windows Setup
 
-Note: Alternate, more user friendly, instructions for WSL2 can be found in [alternate_instructions_for_WSL2.pdf](./alternate_instructions_for_WSL2.pdf).
+Note: Alternate, more user friendly, instructions for WSL2 can be found in [alternate_instructions_for_WSL2.pdf](./alternate_instructions_for_WSL2.pdf) or [futher below](#jupyter-notebook-installation-under-wsl2windows).
 
 
 
@@ -170,3 +170,57 @@ VSCode combined with WSL documentation can be [found here](https://code.visualst
         `brew install openssl@3 readline sqlite3 xz tcl-tk@8 libb2 zstd zlib pkgconfig`
 
 1. ### [Return to Main Instructions](#environment-setup-instructions)
+
+
+
+## Jupyter notebook installation under WSL2/Windows
+
+### Install WSL2
+
+In a PowerShell terminal
+```Powershell
+      wsl --install ubuntu (Note: two minus signs before install not just one)
+```
+
+Follow the instructions and choose a password
+
+### Install Jupyter and dependencies
+ 
+When you got a prompt
+
+```Bash
+      cd ~  (Note: tilde.. wave sign)
+      sudo snap install --classic astral-uv 
+      sudo apt install zip (Note: use previously defined password if asked)
+      /snap/bin/uv venv jupyter
+      cd jupyter
+      source bin/activate
+      /snap/bin/uv pip install jupyter
+      /snap/bin/uv pip install qiskit qiskit_ibm_runtime qiskit_aer matplotlib pylatexenc
+```
+
+### Launch jupyter
+
+```Bash
+      jupyter-lab
+```
+_Note: Jupyter-notebook is also fine, but don’t have the browser window in the left_
+
+### Open Chrome Browser (on windows)
+
+Copy-Paste the URL displayed into Chrome Browser
+
+_To copy-paste, simply select text with the mouse and the left button, when highlighted, right-click.  Then open browser and ctrl+v in the url bar._
+
+In the jupyter web based interface, I upload your zipped notebooks (using the pointing up arrow)
+
+Then I open a terminal (shell) from file->new->terminal
+I unzip the file with
+
+```Bash
+unzip notebooks.zip
+```
+
+Then I simply navigate the folder in the left menu and open the notebook.
+
+_Could need a file browser refresh using the rounded arrow_
