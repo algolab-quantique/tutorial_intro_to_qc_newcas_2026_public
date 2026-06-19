@@ -29,6 +29,10 @@ After this, your setup should be good to go. Each hands-on will have instruction
 
 ## VS Code and Pyenv in Windows Setup
 
+Note: Alternate, more user friendly, instructions for WSL2 can be found in [alternate_instructions_for_WSL2.pdf](./alternate_instructions_for_WSL2.pdf).
+
+
+
 VSCode combined with WSL documentation can be [found here](https://code.visualstudio.com/docs/remote/wsl).
 
 1. ### Install WSL2
